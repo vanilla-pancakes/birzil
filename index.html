@@ -15,7 +15,7 @@
       href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&family=Parisienne&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles.css?v=7" />
   </head>
   <body>
     <div class="background" aria-hidden="true">
@@ -83,13 +83,11 @@
               <span class="time-label">Seconds</span>
             </div>
           </div>
-
-          <div class="wedding-day" id="weddingDay" hidden>
-            <h2>Today, Bazil Marries Irza</h2>
-            <p>The waiting is over.</p>
-            <p>Our forever begins today. <span aria-label="love">♥</span></p>
-          </div>
         </section>
+
+        <button class="replay-link" id="replayFinale" type="button" hidden>
+          Relive the celebration
+        </button>
 
         <p class="date-line">Friday, 2 October 2026 · 10:00 PM</p>
         <p class="closer-line">Every second brings us closer to forever.</p>
@@ -112,6 +110,37 @@
       </section>
     </main>
 
-    <script src="script.js"></script>
+    <div
+      class="finale"
+      id="finale"
+      role="dialog"
+      aria-label="Wedding celebration"
+      aria-hidden="true"
+    >
+      <canvas class="finale-canvas" id="fireworksCanvas"></canvas>
+      <canvas class="finale-canvas" id="petalsCanvas"></canvas>
+
+      <div class="finale-stage">
+        <div class="final-count" id="finalCount" aria-live="polite"></div>
+
+        <div class="finale-content">
+          <div class="bloom" id="bloom" aria-hidden="true"></div>
+          <p class="finale-eyebrow">The waiting is over</p>
+          <h2 class="finale-names" aria-label="Bazil and Irza">
+            <span class="name" data-text="Bazil"></span>
+            <span class="amp" aria-hidden="true">&amp;</span>
+            <span class="name" data-text="Irza"></span>
+          </h2>
+          <p class="finale-line">Today, our forever begins.</p>
+          <p class="finale-date">2 October 2026</p>
+          <button class="finale-btn" id="finaleClose" type="button">
+            Continue
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="finale.js?v=7"></script>
+    <script src="script.js?v=7"></script>
   </body>
 </html>
